@@ -39,9 +39,6 @@
         "symfony/polyfill-php70": "*",
         "symfony/polyfill-php56": "*"
     },
-    "conflict": {
-        "symfony/symfony": "*"
-    },
     "extra": {
         "symfony": {
             "allow-contrib": false,
