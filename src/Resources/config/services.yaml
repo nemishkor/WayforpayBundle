@@ -1,0 +1,3 @@
+services:
+    nemishkor\WayForPay\Services\WayforpayService:
+        public: true
