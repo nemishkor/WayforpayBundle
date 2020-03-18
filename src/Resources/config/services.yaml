@@ -1,3 +1,4 @@
 services:
-    nemishkor\WayForPay\Services\WayforpayService:
-        public: true
+    wayforpay:
+        class: nemishkor\WayForPay\Services\WayforpayService
+        public: false
