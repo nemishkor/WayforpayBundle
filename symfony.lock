@@ -98,6 +98,9 @@
     "symfony/mime": {
         "version": "v4.4.5"
     },
+    "symfony/polyfill-ctype": {
+        "version": "v1.14.0"
+    },
     "symfony/polyfill-intl-idn": {
         "version": "v1.14.0"
     },

@@ -1,5 +1,4 @@
 {
-    "minimum-stability": "dev",
     "name": "nemishkor/wayforpay",
     "type": "symfony-bundle",
     "license": "GNU v.3.0",

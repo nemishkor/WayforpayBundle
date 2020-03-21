@@ -1,4 +1,4 @@
 services:
-    wayforpay:
+    nemishkor.wayforpay:
         class: nemishkor\WayForPay\Services\WayforpayService
-        public: false
+        autoconfigure: true
