@@ -1,5 +1,5 @@
 services:
     nemishkor.wayforpay:
-        class: nemishkor\WayForPay\Services\WayforpayService
+        class: nemishkor\WayForPay\Wayforpay
         autowire: true
         autoconfigure: true
