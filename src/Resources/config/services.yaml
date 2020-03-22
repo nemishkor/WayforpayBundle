@@ -4,4 +4,4 @@ services:
         autowire: true
         autoconfigure: true
 
-    nemishkor\WayForPay\Wayforpay: '@nemishkor.wayforpay'
+    Nemishkor\Wayforpay\Wayforpay: '@nemishkor.wayforpay'
