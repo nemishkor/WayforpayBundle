@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Nemishkor\\WayForPay\\": "src/"
+            "Nemishkor\\Wayforpay\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Nemishkor\\WayForPay\\Tests\\": "tests/"
+            "Nemishkor\\Wayforpay\\Tests\\": "tests/"
         }
     },
     "extra": {
