@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Nemishkor\Wayforpay\Services;
+namespace Nemishkor\Wayforpay;
 
 
-class WayforpayService {
+class Wayforpay {
 
     public function purchase(): string {
         return 'yes';
