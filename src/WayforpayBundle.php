@@ -9,6 +9,6 @@ namespace nemishkor\WayForPay;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class WayForPayBundle extends Bundle {
+class WayforpayBundle extends Bundle {
 
 }
