@@ -3,3 +3,5 @@ services:
         class: Nemishkor\Wayforpay\Wayforpay
         autowire: true
         autoconfigure: true
+
+    nemishkor\WayForPay\Wayforpay: '@nemishkor.wayforpay'
