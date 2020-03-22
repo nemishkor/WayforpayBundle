@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace nemishkor\WayForPay\Services;
+namespace Nemishkor\Wayforpay\Services;
 
 
 class WayforpayService {

@@ -5,7 +5,7 @@
  * Time: 17:28
  */
 
-namespace nemishkor\WayForPay\DependencyInjection;
+namespace Nemishkor\Wayforpay\DependencyInjection;
 
 
 use Exception;
@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\Config\FileLocator;
 
-class WayForPayExtension extends Extension{
+class WayforpayExtension extends Extension{
 
     /**
      * Loads a specific configuration.

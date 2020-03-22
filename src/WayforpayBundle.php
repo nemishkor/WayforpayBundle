@@ -5,7 +5,7 @@
  * Time: 17:20
  */
 
-namespace nemishkor\WayForPay;
+namespace Nemishkor\Wayforpay;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

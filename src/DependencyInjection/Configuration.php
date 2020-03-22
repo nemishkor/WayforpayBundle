@@ -5,7 +5,7 @@
  * Time: 17:22
  */
 
-namespace nemishkor\WayForPay\DependencyInjection;
+namespace Nemishkor\Wayforpay\DependencyInjection;
 
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
