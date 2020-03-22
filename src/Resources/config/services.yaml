@@ -2,3 +2,4 @@ services:
     nemishkor.wayforpay:
         class: nemishkor\WayForPay\Services\WayforpayService
         autowire: true
+        autoconfigure: true
