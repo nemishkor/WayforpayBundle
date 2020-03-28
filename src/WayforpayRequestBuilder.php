@@ -150,14 +150,6 @@ class WayforpayRequestBuilder {
     }
 
     /**
-     * @param PurchaseRequestParams $params
-     * @return string
-     */
-    public function getPurchaseRequest(PurchaseRequestParams $params): string {
-        return http_build_query($this->getPurchaseRequestFlatContentParams($params));
-    }
-
-    /**
      * @param array $params
      * @return string
      */
