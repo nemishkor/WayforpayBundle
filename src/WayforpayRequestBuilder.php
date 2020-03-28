@@ -82,7 +82,7 @@ class WayforpayRequestBuilder {
         }
 
         if ($params->getOrder()->getOrderTimeout() !== null) {
-            $body['orderTimeout'] = $params->getOrder()->getOrderTimeout(); // TODO convert to seconds
+            $body['orderTimeout'] = abs((new \DateTime())->add($params->getOrder()->getOrderTimeout())->getTimestamp() - (new \DateTime)->getTimestamp());
         }
 
         if ($params->getOrder()->getRecToken() !== null) {
