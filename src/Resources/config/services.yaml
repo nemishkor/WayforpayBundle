@@ -13,4 +13,4 @@ services:
         arguments:
             - '%wayforpay.merchantSecretKey%'
 
-    Nemishkor\Wayforpay\WayforpayRequestBuilder: '@wayforpay_request_builder'
+    Nemishkor\Wayforpay\WayforpayRequestBuilder: '@nemishkor.wayforpay_request_builder'
