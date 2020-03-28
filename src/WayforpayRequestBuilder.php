@@ -132,31 +132,16 @@ class WayforpayRequestBuilder {
 
         $paramsForSignature = array_merge(
             [
-                $params->getMerchant()->getAccount(),
-                $params->getMerchant()->getDomainName(),
-                $params->getOrder()->getReference(),
-                $params->getOrder()->getDate()->getTimestamp(),
-                $params->getOrder()->getAmount(),
-                $params->getOrder()->getCurrency(),
+                $body['merchantAccount'],
+                $body['merchantDomainName'],
+                $body['orderReference'],
+                $body['orderDate'],
+                $body['amount'],
+                $body['currency'],
             ],
-            array_map(
-                static function(Product $product): string {
-                    return $product->getName();
-                },
-                $params->getOrder()->getProducts()
-            ),
-            array_map(
-                static function(Product $product): string {
-                    return number_format($product->getCount(), 0, '', '');
-                },
-                $params->getOrder()->getProducts()
-            ),
-            array_map(
-                static function(Product $product): string {
-                    return number_format($product->getPrice(), 2, '.', '');
-                },
-                $params->getOrder()->getProducts()
-            )
+            $body['productName'],
+            $body['productPrice'],
+            $body['productCount']
         );
 
         $body['merchantSignature'] = $this->calculateSignature($paramsForSignature);
