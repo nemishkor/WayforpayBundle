@@ -38,7 +38,7 @@ class Order {
      *
      * @var float
      */
-    private $amount = 0.0;
+    private $amount;
 
     /**
      * Currency of order UAH
@@ -120,11 +120,13 @@ class Order {
     public function __construct(
         int $reference,
         DateTime $date,
-        string $currency
+        string $currency,
+        float $amount = 0.0
     ) {
         $this->reference = $reference;
         $this->date = $date;
         $this->currency = $currency;
+        $this->amount = $amount;
         $this->holdTimeout = new DateInterval('P20D');
         $this->products = [];
     }
