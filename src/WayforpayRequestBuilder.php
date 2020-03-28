@@ -23,7 +23,7 @@ class WayforpayRequestBuilder {
         $this->merchantSecret = $merchantSecret;
     }
 
-    public function getPurchaseRequestContent(PurchaseRequestParams $params): string {
+    public function getPurchaseRequestFlatContentParams(PurchaseRequestParams $params): array {
 
         $body = [
             'merchantAccount' => $params->getMerchant()->getAccount(),
@@ -161,7 +161,15 @@ class WayforpayRequestBuilder {
 
         $body['merchantSignature'] = $this->calculateSignature($paramsForSignature);
 
-        return http_build_query($body);
+        return $body;
+    }
+
+    /**
+     * @param PurchaseRequestParams $params
+     * @return string
+     */
+    public function getPurchaseRequest(PurchaseRequestParams $params): string {
+        return http_build_query($this->getPurchaseRequestFlatContentParams($params));
     }
 
     /**
