@@ -5,3 +5,12 @@ services:
         autoconfigure: true
 
     Nemishkor\Wayforpay\Wayforpay: '@nemishkor.wayforpay'
+
+    nemishkor.wayforpay_request_builder:
+        class: Nemishkor\Wayforpay\WayforpayRequestBuilder
+        autowire: true
+        autoconfigure: true
+        arguments:
+            - '%wayforpay.merchantSecretKey%'
+
+    Nemishkor\Wayforpay\WayforpayRequestBuilder: '@wayforpay_request_builder'

@@ -119,6 +119,13 @@ class PurchaseRequestParams {
     }
 
     /**
+     * @return Order
+     */
+    public function getOrder(): Order {
+        return $this->order;
+    }
+
+    /**
      * @return string[]|null
      */
     public function getPaymentSystems(): ?array {

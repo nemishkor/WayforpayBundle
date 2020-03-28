@@ -64,4 +64,46 @@ class Avia {
         $this->reservationCode = $reservationCode;
     }
 
+    /**
+     * @return DateTime
+     */
+    public function getDepartureDate(): DateTime {
+        return $this->departureDate;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLocationNumber(): int {
+        return $this->locationNumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocationCodes(): string {
+        return $this->locationCodes;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFirstName(): string {
+        return $this->firstName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastName(): string {
+        return $this->lastName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReservationCode(): string {
+        return $this->reservationCode;
+    }
+
 }

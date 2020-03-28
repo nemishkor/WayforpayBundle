@@ -19,7 +19,16 @@ class Configuration implements ConfigurationInterface {
      * @return TreeBuilder The tree builder
      */
     public function getConfigTreeBuilder() {
-        return new TreeBuilder('wayforpay');
+        $treeBuilder = new TreeBuilder('wayforpay');
+
+        $treeBuilder
+            ->getRootNode()
+            ->children()
+            ->scalarNode('merchantSecretKey')
+                ->isRequired()
+            ->end();
+
+        return $treeBuilder;
     }
 
 }

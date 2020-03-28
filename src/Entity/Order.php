@@ -137,6 +137,13 @@ class Order {
     }
 
     /**
+     * @return DateTime
+     */
+    public function getDate(): DateTime {
+        return $this->date;
+    }
+
+    /**
      * @return float
      */
     public function getAmount(): float {
