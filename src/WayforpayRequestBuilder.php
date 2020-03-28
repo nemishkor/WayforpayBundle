@@ -140,8 +140,8 @@ class WayforpayRequestBuilder {
                 $body['currency'],
             ],
             $body['productName'],
-            $body['productPrice'],
-            $body['productCount']
+            $body['productCount'],
+            $body['productPrice']
         );
 
         $body['merchantSignature'] = $this->calculateSignature($paramsForSignature);
