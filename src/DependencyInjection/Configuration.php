@@ -26,6 +26,14 @@ class Configuration implements ConfigurationInterface {
             ->children()
             ->scalarNode('merchantSecretKey')
                 ->isRequired()
+            ->end()
+            ->scalarNode('merchantAccount')
+                ->isRequired()
+                ->defaultValue('test_merch_n1')
+            ->end()
+            ->scalarNode('merchantDomainName')
+                ->isRequired()
+                ->defaultValue('flk3409refn54t54t*FNJRET')
             ->end();
 
         return $treeBuilder;

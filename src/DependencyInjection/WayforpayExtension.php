@@ -27,6 +27,8 @@ class WayforpayExtension extends Extension{
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
         $container->setParameter('wayforpay.merchantSecretKey', $config['merchantSecretKey']);
+        $container->setParameter('wayforpay.merchantAccount', $config['merchantAccount']);
+        $container->setParameter('wayforpay.merchantDomainName', $config['merchantDomainName']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yaml');

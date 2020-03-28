@@ -14,3 +14,13 @@ services:
             - '%wayforpay.merchantSecretKey%'
 
     Nemishkor\Wayforpay\WayforpayRequestBuilder: '@nemishkor.wayforpay_request_builder'
+
+    nemishkor.wayforpay.request_params_factory:
+        class: Nemishkor\Wayforpay\RequestParamsFactory
+        autowire: true
+        autoconfigure: true
+        arguments:
+            - '%wayforpay.merchantAccount%'
+            - '%wayforpay.merchantDomainName%'
+
+    Nemishkor\Wayforpay\RequestParamsFactory: '@nemishkor.wayforpay.request_params_factory'
