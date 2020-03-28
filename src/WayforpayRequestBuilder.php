@@ -27,13 +27,13 @@ class WayforpayRequestBuilder {
 
         $body = [
             'merchantAccount' => $params->getMerchant()->getAccount(),
-            'merchantAuthType' => $params->getMerchant()->getAuthType(),
+            'merchantAuthType' => $params->getMerchant()->getAuthType()->getName(),
             'merchantDomainName' => $params->getMerchant()->getDomainName(),
-            'merchantTransactionType' => $params->getMerchant()->getTransactionType(),
-            'merchantTransactionSecureType' => $params->getMerchant()->getTransactionSecureType(),
+            'merchantTransactionType' => $params->getMerchant()->getTransactionType()->getName(),
+            'merchantTransactionSecureType' => $params->getMerchant()->getTransactionSecureType()->getName(),
             'language' => $params->getLanguage(),
             'orderReference' => $params->getOrder()->getReference(),
-            'orderDate' => $params->getOrder()->getDate(),
+            'orderDate' => $params->getOrder()->getDate()->getTimestamp(),
             'amount' => $params->getOrder()->getAmount(),
             'currency' => $params->getOrder()->getCurrency(),
             'holdTimeout' => $params->getOrder()->getHoldTimeout(),
@@ -82,7 +82,7 @@ class WayforpayRequestBuilder {
         }
 
         if ($params->getOrder()->getOrderTimeout() !== null) {
-            $body['orderTimeout'] = $params->getOrder()->getOrderTimeout();
+            $body['orderTimeout'] = $params->getOrder()->getOrderTimeout(); // TODO convert to seconds
         }
 
         if ($params->getOrder()->getRecToken() !== null) {
