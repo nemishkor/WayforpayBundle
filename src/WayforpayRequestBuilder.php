@@ -36,7 +36,7 @@ class WayforpayRequestBuilder {
             'orderDate' => $params->getOrder()->getDate()->getTimestamp(),
             'amount' => $params->getOrder()->getAmount(),
             'currency' => $params->getOrder()->getCurrency(),
-            'holdTimeout' => $params->getOrder()->getHoldTimeout(),
+            'holdTimeout' => abs((new \DateTime())->add($params->getOrder()->getHoldTimeout())->getTimestamp() - (new \DateTime)->getTimestamp()),
             'productName' => array_map(
                 static function(Product $product) {
                     return $product->getName();
