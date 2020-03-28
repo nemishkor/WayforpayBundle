@@ -44,14 +44,14 @@ class WayforpayRequestBuilder {
                 $params->getOrder()->getProducts()
             ),
             'productPrice' => array_map(
-                static function(Product $product) {
-                    return $product->getPrice();
+                static function(Product $product): string {
+                    return (string) $product->getPrice();
                 },
                 $params->getOrder()->getProducts()
             ),
             'productCount' => array_map(
-                static function(Product $product) {
-                    return $product->getCount();
+                static function(Product $product): string {
+                    return (string) $product->getCount();
                 },
                 $params->getOrder()->getProducts()
             ),
