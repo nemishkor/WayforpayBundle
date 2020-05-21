@@ -109,6 +109,18 @@ class WayforpayRequestBuilder {
             $body['clientPhone'] = $params->getOrder()->getClient()->getPhone();
         }
 
+        if ($params->getOrder()->getClient() === null && $params->getOrder()->getDelivery() !== null) {
+            $body['clientFirstName'] = $params->getOrder()->getDelivery()->getFirstName();
+            $body['clientLastName'] = $params->getOrder()->getDelivery()->getLastName();
+            $body['clientAddress'] = $params->getOrder()->getDelivery()->getAddress();
+            $body['clientCity'] = $params->getOrder()->getDelivery()->getCity();
+            $body['clientState'] = $params->getOrder()->getDelivery()->getState();
+            $body['clientZipCode'] = $params->getOrder()->getDelivery()->getZipCode();
+            $body['clientCountry'] = $params->getOrder()->getDelivery()->getCountry();
+            $body['clientEmail'] = $params->getOrder()->getDelivery()->getEmail();
+            $body['clientPhone'] = $params->getOrder()->getDelivery()->getPhone();
+        }
+
         if ($params->getOrder()->getDelivery() !== null) {
             $body['deliveryFirstName'] = $params->getOrder()->getDelivery()->getFirstName();
             $body['deliveryLastName'] = $params->getOrder()->getDelivery()->getLastName();

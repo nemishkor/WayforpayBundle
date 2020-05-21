@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Nemishkor\Wayforpay\ObjectValues\Order;
 
 
-class Contact {
+class Contact implements ContactInterface {
 
     /**
      * @var string

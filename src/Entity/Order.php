@@ -14,6 +14,7 @@ use DateInterval;
 use DateTime;
 use Nemishkor\Wayforpay\ObjectValues\Order\Avia;
 use Nemishkor\Wayforpay\ObjectValues\Order\Contact;
+use Nemishkor\Wayforpay\ObjectValues\Order\ContactInterface;
 use Nemishkor\Wayforpay\ObjectValues\Order\Product;
 use Nemishkor\Wayforpay\Validator\Order\HoldTimeout;
 
@@ -103,7 +104,7 @@ class Order {
     private $socialUri;
 
     /**
-     * @var Contact|null
+     * @var ContactInterface|null
      */
     private $client;
 
@@ -279,16 +280,16 @@ class Order {
     }
 
     /**
-     * @return Contact|null
+     * @return ContactInterface|null
      */
-    public function getClient(): ?Contact {
+    public function getClient(): ?ContactInterface {
         return $this->client;
     }
 
     /**
-     * @param Contact|null $client
+     * @param ContactInterface|null $client
      */
-    public function setClient(?Contact $client): void {
+    public function setClient(?ContactInterface $client): void {
         $this->client = $client;
     }
 
