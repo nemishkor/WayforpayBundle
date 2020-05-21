@@ -294,16 +294,16 @@ class Order {
     }
 
     /**
-     * @return Contact|null
+     * @return ContactInterface|null
      */
-    public function getDelivery(): ?Contact {
+    public function getDelivery(): ?ContactInterface {
         return $this->delivery;
     }
 
     /**
-     * @param Contact|null $delivery
+     * @param ContactInterface|null $delivery
      */
-    public function setDelivery(?Contact $delivery): void {
+    public function setDelivery(?ContactInterface $delivery): void {
         $this->delivery = $delivery;
     }
 
