@@ -47,7 +47,7 @@ class Wayforpay {
         return $this->httpClient->request(
             'POST',
             $this->baseUrl,
-            ['body' => http_build_query($paramsFlatArray)]
+            ['json' => $paramsFlatArray]
         );
     }
 

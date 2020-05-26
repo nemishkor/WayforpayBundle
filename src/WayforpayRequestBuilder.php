@@ -172,9 +172,9 @@ class WayforpayRequestBuilder {
 
     public function getCheckStatusParamsArray(CheckStatusParams $params): array {
         return [
-            'transactionType' => TransactionType::checkStatus(),
+            'transactionType' => TransactionType::checkStatus()->getName(),
             'merchantAccount' => $params->getMerchant()->getAccount(),
-            'orderReference' => $params->getOrder()->getReference(),
+            'orderReference' => (string)$params->getOrder()->getReference(),
             'merchantSignature' => $this->calculateSignature(
                 [$params->getMerchant()->getAccount(), $params->getOrder()->getReference()]
             ),
