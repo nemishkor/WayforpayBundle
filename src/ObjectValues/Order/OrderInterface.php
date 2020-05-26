@@ -91,7 +91,7 @@ interface OrderInterface {
      * Array with the products of order
      *
      * @return array
-     * @var Product[]
+     * @var ProductInterface[]
      */
     public function getProducts(): array;
 

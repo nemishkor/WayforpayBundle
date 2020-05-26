@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Nemishkor\Wayforpay\ObjectValues\Order;
 
 
-class Product {
+class Product implements ProductInterface {
 
     /**
      * @var string

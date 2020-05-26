@@ -16,7 +16,7 @@ use Nemishkor\Wayforpay\ObjectValues\Order\Avia;
 use Nemishkor\Wayforpay\ObjectValues\Order\Contact;
 use Nemishkor\Wayforpay\ObjectValues\Order\ContactInterface;
 use Nemishkor\Wayforpay\ObjectValues\Order\OrderInterface;
-use Nemishkor\Wayforpay\ObjectValues\Order\Product;
+use Nemishkor\Wayforpay\ObjectValues\Order\ProductInterface;
 use Nemishkor\Wayforpay\Validator\Order\HoldTimeout;
 
 class Order implements OrderInterface {
@@ -88,7 +88,7 @@ class Order implements OrderInterface {
     /**
      * Array with the products of order
      *
-     * @var Product[]
+     * @var ProductInterface[]
      */
     private $products;
 
@@ -239,14 +239,14 @@ class Order implements OrderInterface {
     }
 
     /**
-     * @return Product[]
+     * @return ProductInterface[]
      */
     public function getProducts(): array {
         return $this->products;
     }
 
     /**
-     * @param Product[] $products
+     * @param ProductInterface[] $products
      */
     public function setProducts(array $products): void {
         $this->products = $products;

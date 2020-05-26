@@ -10,9 +10,10 @@ declare(strict_types=1);
 namespace Nemishkor\Wayforpay;
 
 
+use DateTime;
 use Nemishkor\Wayforpay\ObjectValues\CheckStatusParams;
 use Nemishkor\Wayforpay\ObjectValues\Merchant\TransactionType;
-use Nemishkor\Wayforpay\ObjectValues\Order\Product;
+use Nemishkor\Wayforpay\ObjectValues\Order\ProductInterface;
 use Nemishkor\Wayforpay\ObjectValues\PurchaseRequestParams;
 
 class WayforpayRequestBuilder {
@@ -38,22 +39,25 @@ class WayforpayRequestBuilder {
             'orderDate' => $params->getOrder()->getDate()->getTimestamp(),
             'amount' => $params->getOrder()->getAmount(),
             'currency' => $params->getOrder()->getCurrency(),
-            'holdTimeout' => abs((new \DateTime())->add($params->getOrder()->getHoldTimeout())->getTimestamp() - (new \DateTime)->getTimestamp()),
+            'holdTimeout' => abs(
+                (new DateTime())->add($params->getOrder()->getHoldTimeout())->getTimestamp(
+                ) - (new DateTime)->getTimestamp()
+            ),
             'productName' => array_map(
-                static function(Product $product) {
+                static function (ProductInterface $product) {
                     return $product->getName();
                 },
                 $params->getOrder()->getProducts()
             ),
             'productPrice' => array_map(
-                static function(Product $product): string {
-                    return (string) $product->getPrice();
+                static function (ProductInterface $product): string {
+                    return (string)$product->getPrice();
                 },
                 $params->getOrder()->getProducts()
             ),
             'productCount' => array_map(
-                static function(Product $product): string {
-                    return (string) $product->getCount();
+                static function (ProductInterface $product): string {
+                    return (string)$product->getCount();
                 },
                 $params->getOrder()->getProducts()
             ),
@@ -84,7 +88,10 @@ class WayforpayRequestBuilder {
         }
 
         if ($params->getOrder()->getOrderTimeout() !== null) {
-            $body['orderTimeout'] = abs((new \DateTime())->add($params->getOrder()->getOrderTimeout())->getTimestamp() - (new \DateTime)->getTimestamp());
+            $body['orderTimeout'] = abs(
+                (new DateTime())->add($params->getOrder()->getOrderTimeout())->getTimestamp(
+                ) - (new DateTime)->getTimestamp()
+            );
         }
 
         if ($params->getOrder()->getRecToken() !== null) {
