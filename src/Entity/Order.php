@@ -15,10 +15,11 @@ use DateTime;
 use Nemishkor\Wayforpay\ObjectValues\Order\Avia;
 use Nemishkor\Wayforpay\ObjectValues\Order\Contact;
 use Nemishkor\Wayforpay\ObjectValues\Order\ContactInterface;
+use Nemishkor\Wayforpay\ObjectValues\Order\OrderInterface;
 use Nemishkor\Wayforpay\ObjectValues\Order\Product;
 use Nemishkor\Wayforpay\Validator\Order\HoldTimeout;
 
-class Order {
+class Order implements OrderInterface {
 
     /**
      * Unique number of the order in merchant’s system
