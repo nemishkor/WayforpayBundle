@@ -6,7 +6,7 @@ namespace Nemishkor\Wayforpay\ObjectValues;
 
 
 use Nemishkor\Wayforpay\Entity\Merchant;
-use Nemishkor\Wayforpay\Entity\Order;
+use Nemishkor\Wayforpay\ObjectValues\Order\OrderInterface;
 use Symfony\Component\Validator\Constraints;
 
 class PurchaseRequestParams {
@@ -40,7 +40,7 @@ class PurchaseRequestParams {
     private $serviceUrl;
 
     /**
-     * @var Order
+     * @var OrderInterface
      */
     private $order;
 
@@ -62,7 +62,7 @@ class PurchaseRequestParams {
 
     public function __construct(
         Merchant $merchant,
-        Order $order
+        OrderInterface $order
     ) {
         $this->merchant = $merchant;
         $this->language = 'AUTO';
@@ -119,9 +119,9 @@ class PurchaseRequestParams {
     }
 
     /**
-     * @return Order
+     * @return OrderInterface
      */
-    public function getOrder(): Order {
+    public function getOrder(): OrderInterface {
         return $this->order;
     }
 

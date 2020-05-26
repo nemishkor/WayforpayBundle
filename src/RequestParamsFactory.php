@@ -11,8 +11,8 @@ namespace Nemishkor\Wayforpay;
 
 
 use Nemishkor\Wayforpay\Entity\Merchant;
-use Nemishkor\Wayforpay\Entity\Order;
 use Nemishkor\Wayforpay\ObjectValues\CheckStatusParams;
+use Nemishkor\Wayforpay\ObjectValues\Order\OrderInterface;
 use Nemishkor\Wayforpay\ObjectValues\PurchaseRequestParams;
 
 class RequestParamsFactory {
@@ -38,11 +38,11 @@ class RequestParamsFactory {
         return $merchant;
     }
 
-    public function createPurchaseRequestParams(Order $order): PurchaseRequestParams {
+    public function createPurchaseRequestParams(OrderInterface $order): PurchaseRequestParams {
         return new PurchaseRequestParams($this->getMerchant(), $order);
     }
 
-    public function createCheckStatusRequestParams(Order $order): CheckStatusParams {
+    public function createCheckStatusRequestParams(OrderInterface $order): CheckStatusParams {
         return new CheckStatusParams($this->getMerchant(), $order);
     }
 

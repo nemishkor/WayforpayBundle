@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Nemishkor\Wayforpay;
 
 
-use Nemishkor\Wayforpay\Entity\Order;
+use Nemishkor\Wayforpay\ObjectValues\Order\OrderInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
@@ -34,11 +34,11 @@ class Wayforpay {
     }
 
     /**
-     * @param Order $order
+     * @param OrderInterface $order
      * @return ResponseInterface
      * @throws TransportExceptionInterface
      */
-    public function checkStatus(Order $order): ResponseInterface {
+    public function checkStatus(OrderInterface $order): ResponseInterface {
 
         $paramsFlatArray = $this->requestBuilder->getCheckStatusParamsArray(
             $this->requestParamsFactory->createCheckStatusRequestParams($order)

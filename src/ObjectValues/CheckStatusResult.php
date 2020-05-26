@@ -12,7 +12,7 @@ namespace Nemishkor\Wayforpay\ObjectValues;
 
 use DateTime;
 use Nemishkor\Wayforpay\Entity\Merchant;
-use Nemishkor\Wayforpay\Entity\Order;
+use Nemishkor\Wayforpay\ObjectValues\Order\OrderInterface;
 
 class CheckStatusResult {
 
@@ -24,7 +24,7 @@ class CheckStatusResult {
 
     /**
      * Order in merchant’s system
-     * @var Order
+     * @var OrderInterface
      */
     private $order;
 
@@ -146,16 +146,16 @@ class CheckStatusResult {
     }
 
     /**
-     * @return Order
+     * @return OrderInterface
      */
-    public function getOrder(): Order {
+    public function getOrder(): OrderInterface {
         return $this->order;
     }
 
     /**
-     * @param Order $order
+     * @param OrderInterface $order
      */
-    public function setOrder(Order $order): void {
+    public function setOrder(OrderInterface $order): void {
         $this->order = $order;
     }
 

@@ -11,8 +11,8 @@ namespace Nemishkor\Wayforpay\ObjectValues;
 
 
 use Nemishkor\Wayforpay\Entity\Merchant;
-use Nemishkor\Wayforpay\Entity\Order;
 use Nemishkor\Wayforpay\ObjectValues\Merchant\TransactionType;
+use Nemishkor\Wayforpay\ObjectValues\Order\OrderInterface;
 
 class CheckStatusParams {
 
@@ -24,20 +24,20 @@ class CheckStatusParams {
 
     /**
      * Order in merchant’s system
-     * @var Order
+     * @var OrderInterface
      */
     private $order;
 
-    public function __construct(Merchant $merchant, Order $order) {
+    public function __construct(Merchant $merchant, OrderInterface $order) {
         $this->merchant = $merchant;
         $this->order = $order;
         $this->merchant->setTransactionType(TransactionType::checkStatus());
     }
 
     /**
-     * @return Order
+     * @return OrderInterface
      */
-    public function getOrder(): Order {
+    public function getOrder(): OrderInterface {
         return $this->order;
     }
 
