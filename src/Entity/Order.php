@@ -13,7 +13,6 @@ namespace Nemishkor\Wayforpay\Entity;
 use DateInterval;
 use DateTime;
 use Nemishkor\Wayforpay\ObjectValues\Order\Avia;
-use Nemishkor\Wayforpay\ObjectValues\Order\Contact;
 use Nemishkor\Wayforpay\ObjectValues\Order\ContactInterface;
 use Nemishkor\Wayforpay\ObjectValues\Order\OrderInterface;
 use Nemishkor\Wayforpay\ObjectValues\Order\ProductInterface;
@@ -110,7 +109,7 @@ class Order implements OrderInterface {
     private $client;
 
     /**
-     * @var Contact|null
+     * @var ContactInterface|null
      */
     private $delivery;
 
