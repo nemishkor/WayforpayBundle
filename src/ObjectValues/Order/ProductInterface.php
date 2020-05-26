@@ -14,7 +14,7 @@ interface ProductInterface {
 
     public function getName(): string;
 
-    public function getPrice(): float;
+    public function getPrice(): string;
 
     public function getCount(): int;
 

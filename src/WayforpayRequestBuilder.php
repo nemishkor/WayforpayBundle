@@ -51,7 +51,7 @@ class WayforpayRequestBuilder {
             ),
             'productPrice' => array_map(
                 static function (ProductInterface $product): string {
-                    return (string)$product->getPrice();
+                    return $product->getPrice();
                 },
                 $params->getOrder()->getProducts()
             ),

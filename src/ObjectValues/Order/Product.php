@@ -18,7 +18,7 @@ class Product implements ProductInterface {
     private $name;
 
     /**
-     * @var float
+     * @var string
      */
     private $price;
 
@@ -27,9 +27,9 @@ class Product implements ProductInterface {
      */
     private $count;
 
-    public function __construct(string $name,float $price, int $count) {
+    public function __construct(string $name, float $price, int $count) {
         $this->name = $name;
-        $this->price  =$price;
+        $this->price = number_format($price, 2, '.', '');
         $this->count = $count;
     }
 
@@ -41,9 +41,9 @@ class Product implements ProductInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getPrice(): float {
+    public function getPrice(): string {
         return $this->price;
     }
 
