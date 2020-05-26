@@ -10,6 +10,8 @@ declare(strict_types=1);
 namespace Nemishkor\Wayforpay;
 
 
+use Nemishkor\Wayforpay\ObjectValues\CheckStatusParams;
+use Nemishkor\Wayforpay\ObjectValues\Merchant\TransactionType;
 use Nemishkor\Wayforpay\ObjectValues\Order\Product;
 use Nemishkor\Wayforpay\ObjectValues\PurchaseRequestParams;
 
@@ -159,6 +161,18 @@ class WayforpayRequestBuilder {
         $body['merchantSignature'] = $this->calculateSignature($paramsForSignature);
 
         return $body;
+    }
+
+    public function getCheckStatusParamsArray(CheckStatusParams $params): array {
+        return [
+            'transactionType' => TransactionType::checkStatus(),
+            'merchantAccount' => $params->getMerchant()->getAccount(),
+            'orderReference' => $params->getOrder()->getReference(),
+            'merchantSignature' => $this->calculateSignature(
+                [$params->getMerchant()->getAccount(), $params->getOrder()->getReference()]
+            ),
+            'apiVersion' => '1',
+        ];
     }
 
     /**

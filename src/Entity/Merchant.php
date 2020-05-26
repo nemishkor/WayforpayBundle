@@ -55,12 +55,10 @@ class Merchant {
     private $transactionSecureType;
 
     public function __construct(
-        string $account,
-        string $domainName
+        string $account
     ) {
         $this->account = $account;
         $this->authType = AuthType::simpleSignature();
-        $this->domainName = $domainName;
         $this->transactionType = TransactionType::auto();
         $this->transactionSecureType = TransactionSecureType::auto();
     }
@@ -119,6 +117,13 @@ class Merchant {
      */
     public function getTransactionSecureType(): TransactionSecureType {
         return $this->transactionSecureType;
+    }
+
+    /**
+     * @param string $domainName
+     */
+    public function setDomainName(string $domainName): void {
+        $this->domainName = $domainName;
     }
 
 }
