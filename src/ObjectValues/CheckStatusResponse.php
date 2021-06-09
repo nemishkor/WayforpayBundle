@@ -88,18 +88,21 @@ class CheckStatusResponse {
 
     /**
      * Transaction status
+     * https://wiki.wayforpay.com/uk/view/852131
      * @var string|null
      */
     private $transactionStatus;
 
     /**
      * Reason for refusal
+     * https://wiki.wayforpay.com/uk/view/852131
      * @var string|null
      */
     private $reason;
 
     /**
      * Code of refusal
+     * https://wiki.wayforpay.com/uk/view/852131
      * @var integer|null
      */
     private $reasonCode;
